@@ -1,0 +1,14 @@
+name: quantumVR
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - scipy
+  - matplotlib
+  - pandas
+  - jupyter
+  - pip
+  - pip:
+      - plotnine
+
