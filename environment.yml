@@ -9,6 +9,9 @@ dependencies:
   - pandas
   - jupyter
   - pip
+  - openpyxl
   - pip:
       - plotnine
+
+
 
