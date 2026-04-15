@@ -25,7 +25,18 @@ The project's main objective is to evaluate the impact of the **VR experience** 
   - Seminar attendance
 
 ---
-## How to run 
-To run the main script you must run: python -m src.main in your terminal after having activated the environment with: conda activate quantumVR. 
+## How to Run
+
+Follow these steps to execute the project:
+
+### 1. Activate environment
+```bash
+conda activate quantumVR
+
+### 2. Run the main script
+```bash
+python -m src.main
+
+
 
 (CONTINUE)
