@@ -63,4 +63,3 @@ def build_change_scores(df):
         out[f"{metric_name}_change"] = out[f"{metric_name}_after"] - out[f"{metric_name}_before"]
 
     return out
-

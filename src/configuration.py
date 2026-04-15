@@ -9,6 +9,12 @@ SEGOVIA_FILE = DATA_DIR / "segovia_quantumVR_learningimpact.xlsx"
 
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
+def get_output_dir(script_name: str) -> Path:
+    """Return a per-script output directory inside outputs/figures."""
+    path = OUTPUT_DIR / script_name
+    path.mkdir(parents=True, exist_ok=True)
+    return path
+
 PRE_POST_METRICS = {
     "Test score": ("Score", "Score 2"),
     "Interest": (
