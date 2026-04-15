@@ -32,10 +32,12 @@ Follow these steps to execute the project:
 ### 1. Activate environment
 ```bash
 conda activate quantumVR
+```
 
 ### 2. Run the main script
 ```bash
 python -m src.main
+```
 
 
 
