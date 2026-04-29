@@ -1,7 +1,7 @@
 from src.configuration import VR_METRICS
 from src.load_data import load_all_data, build_long_prepost, build_change_scores
 from src.section1_plots import plot_test_scores_by_site, plot_metric_grid, plot_site_time_panels
-from src.section2_plots import plot_vr_feedback, plot_vr_distributions_by_site
+from src.section2_plots import plot_vr_feedback
 from src.section3_plots import plot_seminar_comparison
 from src.section4_distributions import plot_all_metric_distributions
 from src.section5_distributions import plot_all_metric_dots
@@ -17,8 +17,7 @@ def main():
     plot_metric_grid(long_df)
     plot_site_time_panels(all_data)
     plot_vr_feedback(all_data)
-    plot_vr_distributions_by_site(all_data, VR_METRICS)
-    plot_seminar_comparison(change_df)
+    plot_seminar_comparison(all_data)
     plot_all_metric_distributions(all_data)
     plot_all_metric_dots(all_data)
     plot_all_metric_histograms(all_data)

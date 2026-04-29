@@ -1,36 +1,37 @@
 import matplotlib.pyplot as plt
+import pandas as pd
 
 from src.configuration import get_output_dir
 
 SECTION_OUTPUT_DIR = get_output_dir("section3_plots")
 
 
-def plot_seminar_comparison(change_df):
-    """Plot mean change scores for seminar attendees vs non-attendees, separately for each site."""
-    metrics = ["Test score", "Interest", "Relevance", "Future work", "Confidence"]
+def plot_seminar_comparison(df):
+    """Compare initial test scores between seminar attendees and non-attendees."""
 
-    for site in ["Madrid", "Segovia"]:
-        sub = change_df[change_df["site"] == site].copy()
-        attendee_means = []
-        non_attendee_means = []
+    # 🔥 use ONLY initial test score
+    plot_df = df[["Score", "seminar_attendee"]].copy()
+    plot_df["Score"] = pd.to_numeric(plot_df["Score"], errors="coerce")
+    plot_df = plot_df.dropna(subset=["Score"])
 
-        for metric in metrics:
-            attendee_means.append(sub.loc[sub["seminar_attendee"], f"{metric}_change"].mean())
-            non_attendee_means.append(sub.loc[~sub["seminar_attendee"], f"{metric}_change"].mean())
+    # compute means
+    attendee_mean = plot_df.loc[plot_df["seminar_attendee"], "Score"].mean()
+    non_attendee_mean = plot_df.loc[~plot_df["seminar_attendee"], "Score"].mean()
 
-        x = range(len(metrics))
-        width = 0.35
+    values = [attendee_mean, non_attendee_mean]
+    labels = ["Attended seminar", "Did not attend"]
 
-        fig, ax = plt.subplots(figsize=(9, 5))
-        ax.bar([i - width / 2 for i in x], attendee_means, width, label="Attended seminar")
-        ax.bar([i + width / 2 for i in x], non_attendee_means, width, label="Did not attend")
-        ax.set_xticks(list(x))
-        ax.set_xticklabels(metrics, rotation=20, ha="right")
-        ax.set_ylabel("Mean change (after - before)")
-        ax.set_title(f"{site}: seminar attendees vs non-attendees")
-        ax.axhline(0, linewidth=1)
-        ax.legend()
+    # plot
+    fig, ax = plt.subplots(figsize=(7, 5))
+    ax.bar(labels, values)
 
-        plt.tight_layout()
-        plt.savefig(SECTION_OUTPUT_DIR / f"{site.lower()}_seminar_comparison.png", dpi=300)
-        plt.close()
+    ax.set_ylabel("Initial test score")
+    ax.set_title("Initial test score: seminar vs non-seminar")
+    ax.spines["top"].set_visible(False)
+    ax.spines["right"].set_visible(False)
+
+    plt.tight_layout()
+    plt.savefig(SECTION_OUTPUT_DIR / "seminar_initial_score_comparison.png", dpi=300)
+    plt.close()
+
+    

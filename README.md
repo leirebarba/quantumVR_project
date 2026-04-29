@@ -32,9 +32,14 @@ Follow these steps to execute the project:
 conda activate quantumVR
 ```
 
-### 2. Run the main script
+### 2. For preliminary analysis: Run the main script
 ```bash
 python -m src.main
+```
+
+### 3. For Q1 analysis: Run the q1 learning script
+```bash
+python -m src.q1_learning
 ```
 
 

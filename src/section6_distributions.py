@@ -20,7 +20,13 @@ def _metric_limits(metric_name):
 
 
 def _build_distribution_df(df, metric_name, pre_col, post_col):
-    """Reshape the data to a long format for a specific metric, combining pre and post values with site and time information."""
+    """Reshape the data but only keep participants with BOTH pre and post values."""
+
+    #keeping only those who answered both tests
+    df = df.dropna(subset=[pre_col, post_col]).copy()
+
+    print(f"{metric_name}: {len(df)} complete cases")
+
     before = df[["Participant", "site"]].copy()
     before["time"] = "Before"
     before["value"] = pd.to_numeric(df[pre_col], errors="coerce")
