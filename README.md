@@ -41,6 +41,11 @@ python -m src.main
 ```bash
 python -m src.q1_learning
 ```
+### 4. For Q2 analysis: Run the q2 learning script
+```bash
+python -m src.q2_learning
+```
+
 
 
 
