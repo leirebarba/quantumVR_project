@@ -391,23 +391,12 @@ def plot_B3_change(bam, non_bam):
             ax.text(bar.get_x() + bar.get_width()/2, ypos,
                     f"{v:+.2f}", ha="center", va="bottom", fontsize=8)
 
-    # Cohen's h per metric on delta values
-    for i, (vb, vn) in enumerate(zip(vals_b, vals_n)):
-        h   = _cohen_h_delta(vb, vn)
-        top = max(vb, vn, 0) + 0.18
-        col = C_BAM if h > 0 else C_NONBAM
-        ax.text(i, top, f"h={h:+.2f}\n({_h_label(h)})",
-                ha="center", va="bottom", fontsize=7.5,
-                color=col, fontweight="bold")
-
     ax.axhline(0, color="black", lw=0.9, ls="-", alpha=0.35)
     ax.set_xticks(x)
     ax.set_xticklabels(M_LABELS, fontsize=10)
     ax.set_ylabel("Mean change (post - pre)", fontsize=10)
     ax.set_title(
         "B3 - Attitude Change (post - pre) by Metric\n"
-        "Cohen's h: effect size of BAM change vs Non-BAM change  "
-        "(+ = BAM changed more,  - = Non-BAM changed more)\n"
         "[!] Non-BAM n=9 only - interpret with caution",
         fontsize=11, fontweight="bold",
     )
