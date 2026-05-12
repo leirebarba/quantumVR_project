@@ -1,0 +1,14 @@
+==============================================================================
+  VR EXPERIENCE RATINGS  (1–5 Likert scale)
+  Only BAM students answered these (they are the ones who did VR)
+  ⚠ Segovia BAM did VR after the post test | Madrid BAM did VR before post test
+==============================================================================
+Question                     Segovia BAM                  Madrid BAM                   Combined                    
+-------------------------------------------------------------------------------------------------------------------
+Helped understand concepts   3.94 ± 1.11  (n=18)          4.68 ± 0.48  (n=19)          4.32 ± 0.91  (n=37)         
+Increased motivation         3.94 ± 1.06  (n=18)          4.68 ± 0.58  (n=19)          4.32 ± 0.91  (n=37)         
+Appropriate difficulty       4.33 ± 0.77  (n=18)          4.79 ± 0.42  (n=19)          4.57 ± 0.65  (n=37)         
+Would recommend              4.44 ± 0.98  (n=18)          4.84 ± 0.37  (n=19)          4.65 ± 0.75  (n=37)         
+
+  Note: combined column is descriptive only (different timing of VR).
+==============================================================================
