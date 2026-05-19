@@ -5,7 +5,7 @@ from src.section2_plots import plot_vr_feedback
 from src.section3_plots import plot_seminar_comparison
 from src.section4_distributions import plot_all_metric_distributions
 from src.section5_distributions import plot_all_metric_dots
-from src.section6_distributions import plot_all_metric_histograms
+from src.section6_distributions import plot_all_metric_histograms, plot_all_metric_superposed
 
 def main():
     madrid, segovia, all_data = load_all_data()
@@ -21,6 +21,7 @@ def main():
     plot_all_metric_distributions(all_data)
     plot_all_metric_dots(all_data)
     plot_all_metric_histograms(all_data)
+    plot_all_metric_superposed(all_data)
 
     print("All figures saved in outputs/figures/")
 
